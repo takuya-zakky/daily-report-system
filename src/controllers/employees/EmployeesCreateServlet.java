@@ -29,7 +29,6 @@ public class EmployeesCreateServlet extends HttpServlet {
      */
     public EmployeesCreateServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     /**
