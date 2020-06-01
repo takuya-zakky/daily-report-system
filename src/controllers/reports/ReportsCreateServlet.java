@@ -30,7 +30,6 @@ public class ReportsCreateServlet extends HttpServlet {
      */
     public ReportsCreateServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     /**
