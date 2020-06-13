@@ -18,8 +18,16 @@ import javax.persistence.Table;
             query = "SELECT e FROM Employee AS e ORDER BY e.id DESC"
             ),
     @NamedQuery(
+            name = "getOtherEmployees",
+            query = "SELECT e FROM Employee AS e WHERE NOT (e.id = :employee_id) AND e.delete_flag = 0 ORDER BY e.id DESC"
+            ),
+    @NamedQuery(
             name = "getEmployeesCount",
             query = "SELECT COUNT(e) FROM Employee AS e"
+            ),
+    @NamedQuery(
+            name = "getOtherCount",
+            query = "SELECT COUNT(e) FROM Employee AS e WHERE NOT (e.id = :employee_id) AND e.delete_flag = 0"
             ),
     @NamedQuery(
             name = "checkRegisteredCode",

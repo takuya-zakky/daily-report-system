@@ -21,8 +21,12 @@ import javax.persistence.Table;
             query = "SELECT l FROM Like AS l ORDER BY l.id DESC"
             ),
     @NamedQuery(
-            name = "getLikesCounts",
-            query = "SELECT COUNT(l) FROM Like AS l"
+            name = "getLikes",
+            query = "SELECT l FROM Like AS l where l.employee1 = :employee1"
+            ),
+    @NamedQuery(
+            name = "getLikeID",
+            query = "SELECT l FROM Like AS l where l.employee1 = :employee1 AND l.employee2 = :employee2"
             ),
 })
 @Entity
