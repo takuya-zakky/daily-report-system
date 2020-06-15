@@ -35,8 +35,9 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name = "getFollowReports",
-            query = "SELECT r FROM Report AS r WHERE r.employee = :employee OR r.employee IN"
+            query = "SELECT r FROM Report AS r WHERE r.employee IN"
                     + "(SELECT l.employee2 FROM Like AS l WHERE l.employee1 = :employee)"
+                    + "OR r.employee = :employee "
                     + "ORDER BY r.id DESC"
             ),
     @NamedQuery(
